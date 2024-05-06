@@ -1,3 +1,5 @@
+![image info](https://blockchain.uj.ac.za/static/images/main-logo.png)
+
 # Machine Learning: Credit Card Default Prediction
 A machine learning practical application for credit loaning institutions - which can be used to reduce the loss incurred due to defaulting clients. 
 ## Background
