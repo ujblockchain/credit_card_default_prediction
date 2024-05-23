@@ -1,3 +1,5 @@
+import plotly.express as px
+from plotly.subplots import make_subplots
 import plotly.graph_objs as go
 
 
@@ -137,4 +139,22 @@ def create_multivariate_count_plot(data_series, title_text=None, xaxis_title=Non
     # update figure x and y axes
     fig.update_xaxes(showline=True, linewidth=1, linecolor="black")
     fig.update_yaxes(showline=True, linewidth=1, linecolor="black")
+    fig.show()
+
+
+def plot_confusion_matrix(conf_matrix, title=None):
+    fig = px.imshow(
+        conf_matrix, 
+        labels = {
+            "x": "Predicted Values",
+            "y": "True Value",
+            "color": "Productivity"
+        },
+        x=["No Default", "Default"],
+        y=["No Default", "Default"],
+        text_auto = True,
+        )
+    fig.update_xaxes(side="bottom")
+    if title:
+        fig.update_layout(title=title, title_x=0.5)
     fig.show()
